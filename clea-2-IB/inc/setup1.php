@@ -20,13 +20,4 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
  
-// Do theme setup on the 'after_setup_theme' hook.
-add_action( 'after_setup_theme', 'clea_ib_theme_setup', 11 ); 
 
-
-function clea_ib_theme_setup() {
-
-	/* Register and load styles. */
-	add_action( 'wp_enqueue_scripts', 'clea_ib_enqueue_styles', 4 ); 
-	
-}

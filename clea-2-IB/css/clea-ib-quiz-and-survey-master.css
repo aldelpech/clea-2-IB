@@ -1,85 +1,44 @@
-/****************************************
-* styles pour l'impression de pages
-****************************************/
-
-/* source http://www.alsacreations.com/astuce/lire/1160-une-feuille-de-styles-de-base-pour-le-media-print.html */
-/* 2 headers are created by the template : one with "class=screen", the other with class="print" 
-the scrren header is not displayed as per */
-
-body {
-  width: auto!important;
-  margin: auto!important;
-  font-family: serif;
-  font-size: 12pt;
-  background-color: #fff!important;
-  color: #000!important;
-}
-p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol {
-  color: #000!important;
-  /* margin: auto!important; */
-}
-.print {
-  display: block; /* affichage des éléments de classe print */
-}
-p, blockquote {
-  orphans: 3; /* pas de ligne seule en bas */
-  widows: 3; /* pas de ligne seule en haut */
-}
-blockquote, ul, ol {
-  page-break-inside: avoid; /* pas de coupure dans ces élements */
-}
-h1 {
-  page-break-before: always; /* les h1 ont un saut de page avant */
-}
-
-h1:first-child {
-  page-break-before: avoid; /* le premier h1 n'a pas de saut de page avant */
-}
-
-h1, h2, h3, caption {
-  page-break-after: avoid; /* pas de saut après ces éléments */
-}
-a {
-  color: #000!important;
-  text-decoration: underline!important;
-}
+/************************************************************************************************************************
+*
+* styles pour les quiz de de Quiz And Survey Master https://fr.wordpress.org/plugins/quiz-master-next/
+*
+************************************************************************************************************************/
 
 /* 
-a[href]:after {
-  content: " (" attr(href) ")"; /* affichage des URL des liens */
-/*
-  } 
+* attention le style du questionnaire doit être réglé sur custom
 */
 
-/* source http://www.smashingmagazine.com/2011/11/24/how-to-set-up-a-print-style-sheet/ */
-
-#menu-primary,
-#footer, 
-#menu-secondary, 
-#menu-subsidiary,
-#sidebar-primary,
-#sidebar-secondary,
-.breadcrumb-trail {
-	display: none;
-}
-
-.topbar {
-	display: none !important;
-}
-
-
-#header  {
-	display: block;
-
-}
-
-hgroup#branding {
+span.mlw_qmn_question_number {
 	float: left;
-	max-width: 45%;
+	margin-right: 1%;
 }
 
-#sidebar-header {
-	float: right;
-	max-width: 45%;
+
+.qmn_quiz_container textarea{
+	border: 1px solid #F5B053 ;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+div.mlw_qmn_quiz input[type=submit] {
+	color: #25597F !important ;
+	background: #F5B053 !important ;
+	text-shadow: none !important;
+	font-weight: normal !important;
+}
+
+div.mlw_qmn_quiz input[type=submit]:hover {
+	color: #F49631;
+	background: #6891AF;
+	text-shadow: none;
+	font-weight: normal;
+}
+
+.qmn_question_answer.qmn_question_answer_incorrect, 
+.qmn_question_answer.qmn_question_answer_correct {
+	margin-bottom: 2%;
+	margin-top: 2%;
+	border-left: 5px #F5B053 solid;
+	padding-left: 15px;
 }
 
