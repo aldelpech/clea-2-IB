@@ -1,0 +1,47 @@
+/**
+ * Theme Name:  IB (child of StarGazer)
+ * Theme URI:   
+ * Description: Un thème pour un site "impact"
+ * Version:     1.0.0
+ * Author:      Anne-Laure Delpech
+ * Author URI:  http://parcours-performance.com
+ * Tags:        
+ * Text Domain: 
+ * License:     GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Template:    stargazer
+ */
+ 
+
+/*
+
+
+* TABLE OF CONTENTS:
+
+ * 		0 - colors
+ * 		1 - Header and Footer
+ * 		2 - Main and Content
+ * 		3 - Media
+ * 		4 - Sidebars and Widgets
+ * 		5 - Comments Template
+ * 		6 - Menus
+ * 		7 - Plugins
+
+
+/* test other google fonts 
+	* font-family: 'Bubblegum Sans', cursive;
+	* font-family: 'Roboto', sans-serif;
+	* font-family: 'Open Sans',Arial,sans-serif;
+*/
+
+.font-headlines, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans',Arial,sans-serif;
+}
+
+
+.font-primary, body, input, textarea, .label-checkbox, .label-radio, .required, #site-description, #reply-title small {
+	font-family: 'Open Sans',Arial,sans-serif;
+}
+
+
+
