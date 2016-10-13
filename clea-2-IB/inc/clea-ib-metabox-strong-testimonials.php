@@ -1,6 +1,9 @@
 ﻿<?php
 /**
  *
+ * add field metabox to testimonials
+ * requires both Strong Testimonials & Meta Box plugins
+ *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
  * General Public License as published by the Free Software Foundation; either version 2 of the License,
  * or (at your option) any later version.
@@ -13,7 +16,7 @@
  *
  * @package    clea-2-ib
  * @subpackage Functions
- * @version    1.0.0
+ * @version    0.2.0
  * @author     Anne-Laure Delpech <ald.kerity@gmail.com>
  * @copyright  Copyright (c) 2016 - 2019, Anne-Laure Delpech
  * @link       http://parcours-performance.com
@@ -21,3 +24,4 @@
  */
  
 
+// see https://metabox.io/docs/

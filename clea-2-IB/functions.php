@@ -16,6 +16,9 @@
 /* !!!! Do NOT include or require other php files !!!! */
 // this will break the json parse for the quiz... 
 
+
+add_action( 'init', 'clea_ib_testimonial_add_support' );	
+
 // Do theme setup on the 'after_setup_theme' hook.
 add_action( 'after_setup_theme', 'clea_ib_theme_setup', 11 ); 
 
@@ -91,13 +94,24 @@ function clea_ib_testimonial_register_meta_boxes() {
 		
 			// TEXTAREA
 			array(
-				'name' => esc_html__( 'Extrait "Isabelle"', 'clea-ib' ),
-				'desc' => esc_html__( 'un extrait qui parle d\'Isabelle', 'clea-ib' ),
-				'id'   => "{$prefix}textarea0",
-				'type' => 'textarea',
-				'cols' => 20,
-				'rows' => 3,
-				'record_type' => 'custom',	// strong testimonials : 'custom', 'post' or 'optional'
+				'name' 					=> esc_html__( 'Extrait "Isabelle"', 'clea-ib' ),
+				'desc' 					=> esc_html__( 'un extrait qui parle d\'Isabelle', 'clea-ib' ),
+				'id'   					=> "{$prefix}textarea0",
+				'type' 					=> 'textarea',
+				'cols' 					=> 20,
+				'rows' 					=> 3,
+				// strong testimonials data for fields
+				'record_type' 	=> 'custom',	// strong testimonials : 'custom', 'post' or 'optional'
+				'show_label'	=> 0,
+				'required'		=> 0,
+				'label'			=> esc_html__( 'un extrait qui parle d\'Isabelle', 'clea-ib' ),
+				'admin_table'	=> 0,
+				'show_admin_table_option'	=> 1,
+				'show_placeholder_option'	=> 1,
+				'show_default_options'		=> 1,
+				'show_shortcode_options'	=> 1,
+				'admin_table'             	=> 0,
+				'admin_table_option'      	=> 1,
 			),
 			// TEXTAREA
 			array(
@@ -107,6 +121,18 @@ function clea_ib_testimonial_register_meta_boxes() {
 				'type' => 'textarea',
 				'cols' => 20,
 				'rows' => 3,
+				// strong testimonials data for fields
+				'record_type' 	=> 'custom',	// strong testimonials : 'custom', 'post' or 'optional'
+				'show_label'	=> 0,
+				'required'		=> 0,
+				'label'			=> esc_html__( 'un extrait qui parle de la méthode', 'clea-ib' ),
+				'admin_table'	=> 0,
+				'show_admin_table_option'	=> 1,
+				'show_placeholder_option'	=> 1,
+				'show_default_options'		=> 1,
+				'show_shortcode_options'	=> 1,
+				'admin_table'             	=> 0,
+				'admin_table_option'      	=> 1,
 			),
 			// TEXTAREA
 			array(
@@ -116,6 +142,18 @@ function clea_ib_testimonial_register_meta_boxes() {
 				'type' => 'textarea',
 				'cols' => 20,
 				'rows' => 3,
+				// strong testimonials data for fields
+				'record_type' 	=> 'custom',	// strong testimonials : 'custom', 'post' or 'optional'
+				'show_label'	=> 0,
+				'required'		=> 0,
+				'label'			=> esc_html__( 'un extrait qui parle d\'avant et après', 'clea-ib' ),
+				'admin_table'	=> 0,
+				'show_admin_table_option'	=> 1,
+				'show_placeholder_option'	=> 1,
+				'show_default_options'		=> 1,
+				'show_shortcode_options'	=> 1,
+				'admin_table'             	=> 0,
+				'admin_table_option'      	=> 1,
 			),
 			// TEXTAREA
 			array(
@@ -125,6 +163,18 @@ function clea_ib_testimonial_register_meta_boxes() {
 				'type' => 'textarea',
 				'cols' => 20,
 				'rows' => 3,
+				// strong testimonials data for fields
+				'record_type' 	=> 'custom',	// strong testimonials : 'custom', 'post' or 'optional'
+				'show_label'	=> 0,
+				'required'		=> 0,
+				'label'			=> esc_html__( 'un extrait qui parle de comment ca se passe', 'clea-ib' ),
+				'admin_table'	=> 0,
+				'show_admin_table_option'	=> 1,
+				'show_placeholder_option'	=> 1,
+				'show_default_options'		=> 1,
+				'show_shortcode_options'	=> 1,
+				'admin_table'             	=> 0,
+				'admin_table_option'      	=> 1,
 			),
 		),
 	);
@@ -135,10 +185,19 @@ function clea_ib_testimonial_register_meta_boxes() {
 	
 }
 
-function wpcodex_add_excerpt_support_for_cpt() {
- add_post_type_support( 'wpm-testimonial', 'clea-ibtextarea3' );
+function clea_ib_testimonial_add_support() {
+	
+ $support = array(
+	'clea-ib-textarea0',
+	'clea-ib-textarea1',
+	'clea-ib-textarea2',
+	'clea-ib-textarea3',
+ ) ;
+ 
+ add_post_type_support( 'wpm-testimonial', $support );
+ 
 }
 
-// add_action( 'init', 'wpcodex_add_excerpt_support_for_cpt );	
+
 		
 ?>
