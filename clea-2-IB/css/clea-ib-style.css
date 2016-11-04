@@ -1,0 +1,144 @@
+/* 
+*
+* style site IB
+*
+*/
+
+/********************************************************************************************************
+ * 2 - header
+ *
+ ********************************************************************************************************/
+.display-header-text #header {
+	border-bottom: 0;
+
+	background: url(../images/header-IB-1175x400.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+
+/********************************************************************************************************
+ * 1 - forme page 
+ *
+ ********************************************************************************************************/
+
+.custom-background #container>.wrap {
+	max-width: none !important;
+}
+ 
+@media only screen and (min-width: 950px) {
+	
+	.custom-background #header, .custom-background #main, .custom-background #sidebar-subsidiary {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	
+}
+
+
+.header-image {
+	width: 100%;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+@media only screen and (min-width: 800px) {
+
+	#main {
+		max-width: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	main#content {
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+}
+
+
+/********************************************************************************************************
+ * 0 - colors
+ *
+ * couleur primaire : jaune marron #dcc02a
+ * couleur secondaire : violet #702192
+ * troisème couleur : jaune vert #d4da2a
+ * couleur foncée de police : violet foncé #220a60
+* 
+ ********************************************************************************************************/
+
+.entry-content a, .entry-summary a, .comment-content a {
+    color: #dcc02a !important;
+}
+
+.widget_search input[type=submit] {
+	color: #dcc02a ;
+	background: #dcc02a url(http://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg) 
+}
+
+section.clea-header-image {
+    background-color: #dcc02a;
+}
+
+.bloc-article {				
+	background: #fff;
+	box-shadow: 1px 1px 2px 0 #ccc;
+	border: 2px dotted #220a60;
+}
+
+.bloc-article a img {
+	background: none; 
+	border: 1px solid #dcc02a !important;
+}
+
+.bloc-article .entry-title a {
+	color: #220a60 ;
+}
+
+.bloc-article .categories {
+	background-color:  #d3da2a;
+}
+
+.bloc-article .categories  a {
+	color: #220a60;
+}
+
+.bloc-article .categories a::after {
+	color: #220a60;
+}
+
+.bloc-article .categories:hover,
+.bloc-article .categories:hover a,
+.bloc-article .categories:hover a::after {
+	color: #220a60 ;
+	background-color: #ffeb80;
+}
+
+/* ====== abonnez-vous à la newsletter ====== */
+#mc_embed_signup {
+ 	border: 3px dotted #220a60;
+}
+
+.mc-field-group input {
+    border: 1px solid #220a60;
+    background: #f3f3f3;
+}
+
+input#mc-embedded-subscribe {
+    background-color: #220a60;
+    color: #dcc02a;
+}
+
+#sidebar-before-front-page .tribe-events-list-widget p.tribe-events-widget-link {
+    background-color: #220a60;
+}
+
+#sidebar-before-front-page .tribe-events-list-widget p.tribe-events-widget-link a {
+    color: #ffeb80;
+}
