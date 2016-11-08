@@ -54,121 +54,102 @@ function clea_ib_enqueue_styles_scripts() {
 }
 
 /**********************************************
-* display 4 metaboxes on frontpage
+* display 1 metaboxe with 4 editors on frontpage
 * source http://help4cms.com/add-wysiwyg-editor-in-wordpress-meta-box/
 * http://www.wproots.com/complex-meta-boxes-in-wordpress/
-* https://www.sitepoint.com/adding-custom-meta-boxes-to-wordpress/
+* https://premium.wpmudev.org/blog/creating-meta-boxes/
 **********************************************/
 
-// add metaboxes to the frontpage and disables the main editor
-add_action('admin_init', 'clea_ib_frontpage_wysiwyg_meta_box', 10, 1); 
-
-add_action('save_post', 'clea_ib_custom_wysiwyg_save_postdata');
-
- 
-
-function clea_ib_frontpage_wysiwyg_meta_box()  {
-
-	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
-	$template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
-	// check for a template type
-	if ($template_file == 'page/IB-home-page-template.php') {
-			
-			add_meta_box( 
-				   'edit_section_1',
-				   __('Section 1', 'clea-2-IB'),
-				   'clea_ib_custom_wysiwyg',
-				   'page',
-				   'normal',
-				   'low',
-				   array( 'editor' => 'editor_section_1',
-						'template' => $template_file ) // will be in $box
-			  );
-
-			add_meta_box( 
-				   'edit_section_2',
-				   __('Section 2', 'clea-2-IB'),
-				   'clea_ib_custom_wysiwyg',
-				   'page',
-				   'normal',
-				   'low',
-				   array( 'editor' => 'editor_section_2',
-						'template' => $template_file ) // will be in $box
-			  );
-
-			add_meta_box( 
-				   'edit_section_3',
-				   __('Section 3', 'clea-2-IB'),
-				   'clea_ib_custom_wysiwyg',
-				   'page',
-				   'normal',
-				   'low',
-				   array( 'editor' => 'editor_section_3',
-						'template' => $template_file ) // will be in $box
-			  );
-
-			add_meta_box( 
-				   'edit_section_4',
-				   __('Section 4', 'clea-2-IB'),
-				   'clea_ib_custom_wysiwyg',
-				   'page',
-				   'normal',
-				   'low',
-				   array( 'editor' => 'editor_section_4',
-						'template' => $template_file ) // will be in $box
-			  );
-
-			// remove default editor 
-			// http://wordpress.stackexchange.com/questions/31991/is-it-possible-to-remove-the-main-rich-text-box-editor
-			remove_post_type_support( 'page', 'editor' );
-	}
-	
-}
-
- 
-function clea_ib_custom_wysiwyg( $post, $args )  {
-
-	$content = get_post_meta($post->ID, $args['args']['editor'] , true);
-	wp_editor(
-		htmlspecialchars_decode( $content ) ,
-		$args['args']['editor'], 
-		array(
-			"media_buttons" => true
-		)
+function food_add_meta_boxes( $post ){
+	add_meta_box( 
+		'food_meta_box', 
+		__( 'Nutrition facts', 'food_example_plugin' ), 
+		'food_build_meta_box', 
+		'page', 'normal', 
+		'low' 
 	);
 }
- 
-function clea_ib_custom_wysiwyg_save_postdata( $post_id )  {
- 
-	if (!empty($_POST['editor_section_1']))  {
-		
-		$data = htmlspecialchars($_POST['editor_section_1']);
-		update_post_meta($post_id, 'editor_section_1', $data);
-	}
-	if (!empty($_POST['editor_section_2']))  {
-		
-		$data = htmlspecialchars($_POST['editor_section_2']);
-		update_post_meta($post_id, 'editor_section_2', $data);
-	}
-	if (!empty($_POST['editor_section_3']))  {
-		
-		$data = htmlspecialchars($_POST['editor_section_3']);
-		update_post_meta($post_id, 'editor_section_3', $data);
-	}
-	if (!empty($_POST['editor_section_4']))  {
-		
-		$data = htmlspecialchars($_POST['editor_section_4']);
-		update_post_meta($post_id, 'editor_section_4', $data);
-	}
+add_action( 'add_meta_boxes', 'food_add_meta_boxes' );
+
+function food_build_meta_box( $post ){
+	// make sure the form request comes from WordPress
+	wp_nonce_field( basename( __FILE__ ), 'food_meta_box_nonce' );
+	// retrieve the _food_cholesterol current value
+	$current_cholesterol = get_post_meta( $post->ID, '_food_cholesterol', true );
+	// retrieve the _food_carbohydrates current value
+	$current_carbohydrates = get_post_meta( $post->ID, '_food_carbohydrates', true );
+	$vitamins = array( 'Vitamin A', 'Thiamin (B1)', 'Riboflavin (B2)', 'Niacin (B3)', 'Pantothenic Acid (B5)', 'Vitamin B6', 'Vitamin B12', 'Vitamin C', 'Vitamin D', 'Vitamin E', 'Vitamin K' );
+	
+	// stores _food_vitamins array 
+	$current_vitamins = ( get_post_meta( $post->ID, '_food_vitamins', true ) ) ? get_post_meta( $post->ID, '_food_vitamins', true ) : array();
+	?>
+	<div class='inside'>
+
+		<h3><?php _e( 'Cholesterol', 'food_example_plugin' ); ?></h3>
+		<p>
+			<input type="radio" name="cholesterol" value="0" <?php checked( $current_cholesterol, '0' ); ?> /> Yes<br />
+			<input type="radio" name="cholesterol" value="1" <?php checked( $current_cholesterol, '1' ); ?> /> No
+		</p>
+
+		<h3><?php _e( 'Carbohydrates', 'food_example_plugin' ); ?></h3>
+		<p>
+			<input type="text" name="carbohydrates" value="<?php echo $current_carbohydrates; ?>" /> 
+		</p>
+
+		<h3><?php _e( 'Vitamins', 'food_example_plugin' ); ?></h3>
+		<p>
+		<?php
+			foreach ( $vitamins as $vitamin ) {
+				?>
+				<input type="checkbox" name="vitamins[]" value="<?php echo $vitamin; ?>" <?php checked( ( in_array( $vitamin, $current_vitamins ) ) ? $vitamin : '', $vitamin ); ?> /><?php echo $vitamin; ?> <br />
+				<?php
+			}
+		?>
+		</p>
+	</div>
+	<?php
 }
 
+function food_save_meta_box_data( $post_id ){
+	// verify taxonomies meta box nonce
+	if ( !isset( $_POST['food_meta_box_nonce'] ) || !wp_verify_nonce( $_POST['food_meta_box_nonce'], basename( __FILE__ ) ) ){
+		echo "------------------------------------------------------------------------1";
+		return;
+	}
+	// return if autosave
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ){
+		echo "------------------------------------------------------------------------2";
+		return;
+	}
+	// Check the user's permissions.
+	if ( ! current_user_can( 'edit_post', $post_id ) ){
+		echo "------------------------------------------------------------------------3";
+		return;
+	}
 
-// http://wordpress.stackexchange.com/questions/31991/is-it-possible-to-remove-the-main-rich-text-box-editor
-function remove_pages_editor(){
+	// store custom fields values
+	// cholesterol string
+	if ( isset( $_REQUEST['cholesterol'] ) ) {
+		update_post_meta( $post_id, '_food_cholesterol', sanitize_text_field( $_POST['cholesterol'] ) );
+	}
+	// store custom fields values
+	// carbohydrates string
+	if ( isset( $_REQUEST['carbohydrates'] ) ) {
+		update_post_meta( $post_id, '_food_carbohydrates', sanitize_text_field( $_POST['carbohydrates'] ) );
+	}
+	// store custom fields values
+	// vitamins array
+	if( isset( $_POST['vitamins'] ) ){
+		$vitamins = (array) $_POST['vitamins'];
+		// sinitize array
+		$vitamins = array_map( 'sanitize_text_field', $vitamins );
+		// save data
+		update_post_meta( $post_id, '_food_vitamins', $vitamins );
+	}else{
+		// delete data
+		delete_post_meta( $post_id, '_food_vitamins' );
+	}
+}
+add_action( 'save_post', 'food_save_meta_box_data' );
 
-    remove_post_type_support( 'page', 'editor' );
-}   
-// add_action( 'init', 'remove_pages_editor' );
-
-		
 ?>
