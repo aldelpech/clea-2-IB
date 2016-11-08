@@ -32,6 +32,11 @@ function clea_ib_enqueue_styles_scripts() {
 	// style pour le site IB
 	wp_enqueue_style( 'clea-ib', get_stylesheet_directory_uri() . '/css/clea-ib-style.css', array(), false, 'all' );
 	
+	// pour la page d'accueil uniquement
+	if( is_front_page() ) {
+		
+		wp_enqueue_style( 'clea-ib-quiz-master', get_stylesheet_directory_uri() . '/css/clea-ib-front-page.css', array(), false, 'all' );
+	}
 	
 	// feuille de style pour Quiz And Survey Master Plugin - https://fr.wordpress.org/plugins/quiz-master-next/
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -102,17 +107,21 @@ function clea_ib_custom_meta_box( $post ){
 	$field = "section_" . $section ;
 	$data =  "_section_" . $section ;
 	
+	$settings = array(
+		"media_buttons" => true,
+		"wpautop"		=> false
+	) ;
+	
+	
 	$content = get_post_meta( $post->ID, $data, true );
 
 
 		echo "<h3>" . __( 'Section ', 'clea-2-IB' ) . $section . "</h3>" ;
 
 		wp_editor(
-			htmlspecialchars_decode( $content ) ,
+			wpautop( stripslashes( $content ) ) ,
 			$field, 
-			array(
-				"media_buttons" => true
-			)
+			$settings
 		);		
 		
 	}
@@ -136,7 +145,7 @@ function clea_ib_save_meta_box_data( $post_id ){
 		return;
 	}
 	
-	$section_1 = get_post_meta( $post->ID, 'section_1', true );	
+	$section_1 = wpautop( stripslashes( get_post_meta( $post->ID, 'section_1', true ) ) );	
 	$section_2 = get_post_meta( $post->ID, 'section_2', true );	
 	$section_3 = get_post_meta( $post->ID, 'section_3', true );	
 	$section_4 = get_post_meta( $post->ID, 'section_4', true );	
