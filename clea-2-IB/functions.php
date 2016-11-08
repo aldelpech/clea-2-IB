@@ -57,6 +57,7 @@ function clea_ib_enqueue_styles_scripts() {
 * display 4 metaboxes on frontpage
 * source http://help4cms.com/add-wysiwyg-editor-in-wordpress-meta-box/
 * http://www.wproots.com/complex-meta-boxes-in-wordpress/
+* https://www.sitepoint.com/adding-custom-meta-boxes-to-wordpress/
 **********************************************/
 
 // add metaboxes to the frontpage and disables the main editor
@@ -115,32 +116,18 @@ function clea_ib_frontpage_wysiwyg_meta_box()  {
 				   'low',
 				   array( 'editor' => 'editor_section_4',
 						'template' => $template_file ) // will be in $box
-			  );			  
+			  );
+
+			// remove default editor 
+			// http://wordpress.stackexchange.com/questions/31991/is-it-possible-to-remove-the-main-rich-text-box-editor
+			remove_post_type_support( 'page', 'editor' );
 	}
+	
 }
 
  
 function clea_ib_custom_wysiwyg( $post, $args )  {
 
-	    echo '<pre>';
-
-	    // print_r($post);
-
-	    // print_r($args);
-		/* 
-		Array(
-			[id] => edit_section_1
-			[title] => Section 1
-			[callback] => clea_ib_custom_wysiwyg
-			[args] => Array
-					(
-						[editor] => editor_section_1
-					)
-		) 
-		*/
-
-	    echo '</pre>';
-		
 	$content = get_post_meta($post->ID, $args['args']['editor'] , true);
 	wp_editor(
 		htmlspecialchars_decode( $content ) ,
@@ -178,6 +165,7 @@ function clea_ib_custom_wysiwyg_save_postdata( $post_id )  {
 
 // http://wordpress.stackexchange.com/questions/31991/is-it-possible-to-remove-the-main-rich-text-box-editor
 function remove_pages_editor(){
+
     remove_post_type_support( 'page', 'editor' );
 }   
 // add_action( 'init', 'remove_pages_editor' );
