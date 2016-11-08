@@ -87,21 +87,37 @@ function clea_ib_custom_meta_box( $post ){
 	// make sure the form request comes from WordPress
 	wp_nonce_field( basename( __FILE__ ), 'edit_sections_nonce' );
 
-	$section_1 = get_post_meta( $post->ID, '_section_1', true );
+	$sections = array(
+		'1',
+		'2',
+		'3',
+		'4',
+	) ;
+
 	?>
 	<div class='inside'>
+	<?php
+	foreach( $sections as $section ) {
 
-		<h3><?php _e( 'Section 1', 'clea-2-IB' ); ?></h3>
-		<?php
+	$field = "section_" . $section ;
+	$data =  "_section_" . $section ;
+	
+	$content = get_post_meta( $post->ID, $data, true );
+
+
+		echo "<h3>" . __( 'Section ', 'clea-2-IB' ) . $section . "</h3>" ;
 
 		wp_editor(
-			htmlspecialchars_decode( $section_1 ) ,
-			section_1, 
+			htmlspecialchars_decode( $content ) ,
+			$field, 
 			array(
 				"media_buttons" => true
 			)
-		);	
-		?>
+		);		
+		
+	}
+		
+	?>
 	</div>
 	<?php
 }
@@ -119,14 +135,32 @@ function clea_ib_save_meta_box_data( $post_id ){
 	if ( ! current_user_can( 'edit_post', $post_id ) ){
 		return;
 	}
-
 	
 	$section_1 = get_post_meta( $post->ID, 'section_1', true );	
+	$section_2 = get_post_meta( $post->ID, 'section_2', true );	
+	$section_3 = get_post_meta( $post->ID, 'section_3', true );	
+	$section_4 = get_post_meta( $post->ID, 'section_4', true );	
 	
 	// store section_1
 	if ( isset( $_REQUEST['section_1'] ) ) {
 		update_post_meta( $post_id, '_section_1', sanitize_text_field( $_POST['section_1'] ) );
 	}	
+	
+	// store section_2
+	if ( isset( $_REQUEST['section_2'] ) ) {
+		update_post_meta( $post_id, '_section_2', sanitize_text_field( $_POST['section_2'] ) );
+	}	
+
+	// store section_3
+	if ( isset( $_REQUEST['section_3'] ) ) {
+		update_post_meta( $post_id, '_section_3', sanitize_text_field( $_POST['section_3'] ) );
+	}
+
+	// store section_4
+	if ( isset( $_REQUEST['section_4'] ) ) {
+		update_post_meta( $post_id, '_section_4', sanitize_text_field( $_POST['section_4'] ) );
+	}	
+	
 }
 add_action( 'save_post', 'clea_ib_save_meta_box_data' );
 
