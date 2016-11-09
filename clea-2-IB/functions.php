@@ -113,13 +113,13 @@ function clea_ib_custom_meta_box( $post ){
 	) ;
 	
 	
-	$content = get_post_meta( $post->ID, $data, true );
-
-
-		echo "<h3>" . __( 'Section ', 'clea-2-IB' ) . $section . "</h3>" ;
+	// keeps all html 
+	$content = wp_kses_decode_entities( get_post_meta( $post->ID, $data, true ) );
+	
+	echo "<h3>" . __( 'Section ', 'clea-2-IB' ) . $section . "</h3>" ;
 
 		wp_editor(
-			wpautop( stripslashes( $content ) ) ,
+			$content ,
 			$field, 
 			$settings
 		);		
@@ -145,29 +145,29 @@ function clea_ib_save_meta_box_data( $post_id ){
 		return;
 	}
 	
-	$section_1 = wpautop( stripslashes( get_post_meta( $post->ID, 'section_1', true ) ) );	
-	$section_2 = get_post_meta( $post->ID, 'section_2', true );	
-	$section_3 = get_post_meta( $post->ID, 'section_3', true );	
-	$section_4 = get_post_meta( $post->ID, 'section_4', true );	
+	$section_1 = $_POST['section_1'];
+	$section_2 = $_POST['section_2'];	
+	$section_3 = $_POST['section_3'];	
+	$section_4 = $_POST['section_4'];	
 	
 	// store section_1
 	if ( isset( $_REQUEST['section_1'] ) ) {
-		update_post_meta( $post_id, '_section_1', sanitize_text_field( $_POST['section_1'] ) );
+		update_post_meta( $post_id, '_section_1', $section_1 ) ;
 	}	
 	
 	// store section_2
 	if ( isset( $_REQUEST['section_2'] ) ) {
-		update_post_meta( $post_id, '_section_2', sanitize_text_field( $_POST['section_2'] ) );
+		update_post_meta( $post_id, '_section_2', $section_2 );
 	}	
 
 	// store section_3
 	if ( isset( $_REQUEST['section_3'] ) ) {
-		update_post_meta( $post_id, '_section_3', sanitize_text_field( $_POST['section_3'] ) );
+		update_post_meta( $post_id, '_section_3', $section_3 );
 	}
 
 	// store section_4
 	if ( isset( $_REQUEST['section_4'] ) ) {
-		update_post_meta( $post_id, '_section_4', sanitize_text_field( $_POST['section_4'] ) );
+		update_post_meta( $post_id, '_section_4', $section_4 );
 	}	
 	
 }

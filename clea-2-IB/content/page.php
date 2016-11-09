@@ -27,19 +27,34 @@
 			// get post meta data
 			global $post;
 			$meta = get_post_meta( $post->ID ); 
+			
+			// to be able to do the shortcodes and not simply display them
+			// http://stackoverflow.com/questions/3602941/why-isnt-apply-filterthe-content-outputting-anythin
+			$section_1 = apply_filters('the_content', $meta[_section_1][0]); 	
+			$section_2 = apply_filters('the_content', $meta[_section_2][0]); 	
+			$section_3 = apply_filters('the_content', $meta[_section_3][0]); 	
+			$section_4 = apply_filters('the_content', $meta[_section_4][0]); 		
 			?>
 			
 			<section class="section-1">
-				<?php echo wpautop( stripslashes( $meta[_section_1][0] ) ) ; ?>
+				<div class="content-1">
+					<?php echo $section_1 ; ?>
+				</div>
 			</section>
 			<section class="section-2">
-				<?php echo $meta[_section_2][0] ; ?>
+				<div class="content-2">
+					<?php echo $section_2 ; ?>
+				</div>
 			</section>		
 			<section class="section-3">
-				<?php echo $meta[_section_3][0] ; ?>
+				<div class="content-3">
+					<?php echo $section_3 ; ?>
+				</div>
 			</section>
 			<section class="section-4">
-				<?php echo $meta[_section_4][0] ; ?>
+				<div class="content-4">
+					<?php echo $section_4 ; ?>
+				</div>
 			</section>
 		</div><!-- .entry-content -->
 
