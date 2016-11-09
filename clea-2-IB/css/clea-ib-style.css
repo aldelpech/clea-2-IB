@@ -17,23 +17,62 @@ header#header.site-header {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	
+	min-height: 400px;
+
 }
 
+div#clea-header {
+	position: relative;
+	/* display: flex; */
+}
 
+div#clea-branding {
+	padding: 1%;
+	display: flex;		
+}
+
+nav#menu-secondary {
+	display: flex;	
+}
+
+.custom-logo {
+	margin-bottom: 0 !important ;
+}
+
+.ib-fond {
+	display: flex;
+}
+	
 @media only screen and (min-width: 1025px) {
 
 	div#clea-header {
-		max-width: 1075px;
+		/* max-width: 1075px;
 		margin-right: auto;
-		margin-left: auto;
-		min-height: 400px;
+		margin-left: auto; */
+		top: 270px;
 	}
 
 	.ltr.display-header-text #menu-secondary, .ltr.display-header-text #menu-secondary ul, .ltr.wp-custom-logo #menu-secondary, .ltr.wp-custom-logo #menu-secondary ul {
 		float: none !important;
 	}
+
+	.custom-background #header, .custom-background #main, .custom-background #sidebar-subsidiary {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+		
+	.ib-fond {
+		display: flex;
+		max-width: 1075px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	
 }
+
+
+
 
 
 /********************************************************************************************************
@@ -46,16 +85,6 @@ header#header.site-header {
 	margin-top: 0 !important;
 	margin-bottom: 20px !important;
 }
- 
-@media only screen and (min-width: 950px) {
-	
-	.custom-background #header, .custom-background #main, .custom-background #sidebar-subsidiary {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-	}
-	
-}
-
 
 .header-image {
 	width: 100%;
@@ -91,11 +120,14 @@ header#header.site-header {
 * 
  ********************************************************************************************************/
 
-div#clea-branding {
-	background-color: rgba(227, 192, 146,0.5);
-} 
-
 #menu-primary {
 	background: #e3c092;
 }
 
+div#clea-header {
+	background-color: rgba(227, 192, 146,0.5);
+}
+
+#menu-secondary li a {
+	color: rgba(255, 255, 255, 0.73) !important;
+}

@@ -13,7 +13,7 @@
 			<a href="#content" class="screen-reader-text"><?php _e( 'Skip to content', 'stargazer' ); ?></a>
 		</div><!-- .skip-link -->
 
-		<?php hybrid_get_menu( 'primary' ); // Loads the menu/primary.php template. ?>
+		<?php if ( is_admin() ) { hybrid_get_menu( 'primary' ); }// Loads the menu/primary.php template. ?>
 
 		<div class="wrap">
 
@@ -21,7 +21,7 @@
 
 				<div id="clea-header">
 					<?php if ( display_header_text() || has_custom_logo() ) : // If user chooses to display header text. ?>
-
+					<div class="ib-fond">
 						<div id="clea-branding">
 							<?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
 								<?php the_custom_logo(); // Output custom logo. ?>
@@ -32,10 +32,10 @@
 								<?php hybrid_site_description(); ?>
 							<?php endif; // End check for header text. ?>
 						</div><!-- #branding -->
-
-					<?php endif; // End check for header text. ?>
+						<?php endif; // End check for header text. ?>
 				
-				<?php hybrid_get_menu( 'secondary' ); // Loads the menu/secondary.php template. ?>
+						<?php hybrid_get_menu( 'secondary' ); // Loads the menu/secondary.php template. ?>
+					</div> <!-- .wrap de clea-header -->
 				</div><!-- #clea-header -->
 				
 			</header><!-- #header -->
