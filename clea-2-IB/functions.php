@@ -97,6 +97,7 @@ function clea_ib_custom_meta_box( $post ){
 		'2',
 		'3',
 		'4',
+		'5',
 	) ;
 
 	?>
@@ -148,7 +149,8 @@ function clea_ib_save_meta_box_data( $post_id ){
 	$section_1 = $_POST['section_1'];
 	$section_2 = $_POST['section_2'];	
 	$section_3 = $_POST['section_3'];	
-	$section_4 = $_POST['section_4'];	
+	$section_4 = $_POST['section_4'];
+	$section_5 = $_POST['section_5'];	
 	
 	// store section_1
 	if ( isset( $_REQUEST['section_1'] ) ) {
@@ -168,6 +170,11 @@ function clea_ib_save_meta_box_data( $post_id ){
 	// store section_4
 	if ( isset( $_REQUEST['section_4'] ) ) {
 		update_post_meta( $post_id, '_section_4', $section_4 );
+	}	
+
+		// store section_5
+	if ( isset( $_REQUEST['section_5'] ) ) {
+		update_post_meta( $post_id, '_section_5', $section_5 );
 	}	
 	
 }

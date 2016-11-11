@@ -131,3 +131,9 @@ div#clea-header {
 #menu-secondary li a {
 	color: rgba(255, 255, 255, 0.73) !important;
 }
+
+blockquote {
+	outline-color: rgba(227, 192, 146,0.5) !important;
+	background-color: rgba(227, 192, 146,0.5) !important;
+	color: #656565 !important;
+}

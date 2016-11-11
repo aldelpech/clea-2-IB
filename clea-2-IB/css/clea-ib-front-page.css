@@ -27,7 +27,8 @@ body.home header.entry-header {
 body.home .content-1,
 body.home .content-2,
 body.home .content-3,
-body.home .content-4 {
+body.home .content-4,
+body.home .content-5 {
 	max-width: 1075px; 
 	margin-left: auto;
 	margin-right: auto;
@@ -36,7 +37,8 @@ body.home .content-4 {
 body.home .content-1,
 body.home .content-2,
 body.home .content-3,
-body.home .content-4 {
+body.home .content-4,
+body.home .content-5 {
 	padding: 35px 15px;
 }
 

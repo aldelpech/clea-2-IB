@@ -34,6 +34,7 @@
 			$section_2 = apply_filters('the_content', $meta[_section_2][0]); 	
 			$section_3 = apply_filters('the_content', $meta[_section_3][0]); 	
 			$section_4 = apply_filters('the_content', $meta[_section_4][0]); 		
+			$section_5 = apply_filters('the_content', $meta[_section_5][0]); 	
 			?>
 			
 			<section class="section-1">
@@ -54,6 +55,11 @@
 			<section class="section-4">
 				<div class="content-4">
 					<?php echo $section_4 ; ?>
+				</div>
+			</section>
+			<section class="section-5">
+				<div class="content-5">
+					<?php echo $section_5 ; ?>
 				</div>
 			</section>
 		</div><!-- .entry-content -->
