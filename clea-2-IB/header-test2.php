@@ -17,9 +17,9 @@
 
 		<div class="wrap">
 
-			<header <?php hybrid_attr( 'header' ); ?>>
+			<header id="test2" <?php hybrid_attr( 'header' ); ?>>
 
-				<div id="clea-header">
+				<div id="clea-header-1">
 					<?php if ( display_header_text() || has_custom_logo() ) : // If user chooses to display header text. ?>
 					<div class="ib-fond">
 						<div id="clea-branding">
