@@ -19,12 +19,29 @@
 // Do theme setup on the 'after_setup_theme' hook.
 add_action( 'after_setup_theme', 'clea_ib_theme_setup', 11 ); 
 
+// ne fonctionne pas...
+add_action( 'after_setup_theme', 'clea_ib_theme_setup', 100 ); // higher than hybrid
+
 function clea_ib_theme_setup() {
+
 	/* Register and load styles and scripts. */
 	add_action( 'wp_enqueue_scripts', 'clea_ib_enqueue_styles_scripts', 4 ); 
 	/* Set content width. */
 	hybrid_set_content_width( 700 );
+	
 }
+
+function clea_ib_custom_logo() {
+	
+	// change default logo size
+	$args = array(
+    	'height' => 90,
+    	'width' => 97,
+    );
+    add_theme_support( 'custom-logo', $args );	
+	
+}
+
  
 function clea_ib_enqueue_styles_scripts() {
 	// feuille de style pour l'impression

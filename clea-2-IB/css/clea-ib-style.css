@@ -15,15 +15,15 @@
  *
  ********************************************************************************************************/
 header#test1.site-header{
-	background: url(../images/header-044-1800x600.jpg) no-repeat center center fixed;	
+	background: url(../images/test-2400-600.jpg) no-repeat center center fixed;	
 }
 
 header#test2.site-header{
-	background: url(../images/header-049-1800x600.jpg) no-repeat center center fixed;	
+	background: url(../images/test-1200-400.jpg) no-repeat center center fixed;	
 }
 
 header#test3.site-header{
-	background: url(../images/header-temoignage-1800x600.jpg) no-repeat center center fixed;	
+	background: url(../images/test-768-400.jpg) no-repeat center center fixed;	
 }
  
 header#test1.site-header,
@@ -73,11 +73,17 @@ div#clea-header-1 {
  * 2 - header
  *
  ********************************************************************************************************/
+
+img.custom-logo {
+	width: 97px;
+	height: 90px;
+} 
+ 
 .display-header-text #header,
 header#header.site-header {
 	border-bottom: 0;
 
-	background: url(../images/Evaluer-voix-1800x400.jpg) no-repeat center center fixed;
+	background: url(../images/header-temoignage-1800x600.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -158,6 +164,11 @@ nav#menu-secondary {
 	-moz-border-radius: 0;
 }
 
+header#header .wrap {
+	margin-left: 0 !important; 
+	margin-right: 0 !important;
+}
+
 @media only screen and (min-width: 800px) {
 
 	#main {
@@ -190,11 +201,11 @@ nav#menu-secondary {
 }
 
 div#clea-header {
-	background-color: rgba(227, 192, 146,0.5);
+	background-color: rgba(104,145,175,0.5);
 }
 
 #menu-secondary li a {
-	color: rgba(255, 255, 255, 0.73) !important;
+	color: #FFFFFF !important;
 }
 
 blockquote {

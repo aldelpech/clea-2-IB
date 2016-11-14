@@ -23,7 +23,7 @@
 					<?php if ( display_header_text() || has_custom_logo() ) : // If user chooses to display header text. ?>
 					<div class="ib-fond">
 						<div id="clea-branding">
-							<?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
+							<?php if ( function_exists( 'the_custom_logo' ) ) : ?>
 								<?php the_custom_logo(); // Output custom logo. ?>
 							<?php endif; // End check for custom logo. ?>
 
