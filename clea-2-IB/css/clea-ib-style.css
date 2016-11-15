@@ -15,15 +15,15 @@
  *
  ********************************************************************************************************/
 header#test1.site-header{
-	background: url(../images/test-2400-600.jpg) no-repeat center center fixed;	
+	background: url(../images/test-2400-600.jpg)center;	
 }
 
 header#test2.site-header{
-	background: url(../images/test-1200-400.jpg) no-repeat center center fixed;	
+	background: url(../images/test-1200-400.jpg) center;	
 }
 
 header#test3.site-header{
-	background: url(../images/test-768-400.jpg) no-repeat center center fixed;	
+	background: url(../images/test-768-400.jpg) center ;	
 }
  
 header#test1.site-header,
@@ -34,7 +34,7 @@ header#test3.site-header {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 400px;
+	/*min-height: 400px;*/
 }
 
 .ib-test {
@@ -46,15 +46,17 @@ div#choix-couleur {
 }
 
 div#clea-header-1 {
-	position: relative;
-	/* display: flex; */
+	/* position: relative; */
+
 }
 
 div#clea-header-1 {
 	/* max-width: 1075px;
 	margin-right: auto;
 	margin-left: auto; */
-	top: 270px;
+	/* top: 270px; */
+	padding-top: 250px;
+	padding-bottom: 30px;
 }
 
 div#clea-header-1 {
