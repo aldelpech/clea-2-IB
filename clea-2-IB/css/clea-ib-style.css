@@ -4,72 +4,14 @@
 *
 */
 
-
-
-
-
-
-
 /********************************************************************************************************
  * TESTS
  *
  ********************************************************************************************************/
-header#test1.site-header{
-	background: url(../images/test-2400-600.jpg)center;	
-}
-
-header#test2.site-header{
-	background: url(../images/test-1200-400.jpg) center;	
-}
 
 header#test3.site-header{
 	background: url(../images/test-768-400.jpg) center ;	
 }
- 
-header#test1.site-header,
-header#test2.site-header,
-header#test3.site-header {
-	border-bottom: 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	/*min-height: 400px;*/
-}
-
-.ib-test {
-	margin-bottom: 55px;
-}
-
-div#choix-couleur {
-	margin-top: -90px;
-}
-
-div#clea-header-1 {
-	/* position: relative; */
-
-}
-
-div#clea-header-1 {
-	/* max-width: 1075px;
-	margin-right: auto;
-	margin-left: auto; */
-	/* top: 270px; */
-	padding-top: 250px;
-	padding-bottom: 30px;
-}
-
-div#clea-header-1 {
-	background-color: rgba(227, 192, 146,0.5);
-}
-
-.bandeau {
-	min-height: 50px;
-	margin-top: -100px;
-	z-index: 1000;
-	position: relative;
-}
-	
 
 /********************************************************************************************************
  * 2 - header
@@ -77,36 +19,22 @@ div#clea-header-1 {
  ********************************************************************************************************/
 
 img.custom-logo {
-	width: 97px;
-	height: 90px;
+	width: auto;
+	height: 78px;
+	margin-bottom: 0 !important;
 } 
  
 .display-header-text #header,
 header#header.site-header {
 	border-bottom: 0;
-
-	background: url(../images/header-temoignage-1800x600.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	
-	min-height: 400px;
-
 }
 
 div#clea-header {
 	position: relative;
-	/* display: flex; */
-}
-
-div#clea-branding {
-	padding: 1%;
-	display: flex;		
-}
-
-nav#menu-secondary {
-	display: flex;	
 }
 
 .custom-logo {
@@ -116,33 +44,184 @@ nav#menu-secondary {
 .ib-fond {
 	display: flex;
 }
+
+.ltr.display-header-text #menu-secondary, .ltr.display-header-text #menu-secondary ul, .ltr.wp-custom-logo #menu-secondary, .ltr.wp-custom-logo #menu-secondary ul {
+	float: none !important;
+}
+
+.custom-background #header, .custom-background #main, .custom-background #sidebar-subsidiary {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
 	
-@media only screen and (min-width: 1025px) {
+.ib-fond {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media only screen and (max-width: 370px) {
+
+	img.custom-logo {
+		width: 62px;
+		height: 60px;
+	}
+
+	#menu-secondary li a, #menu-secondary .menu-toggle button {
+		color: rgba(255,255,255,1) !important;
+		background: rgba(104,145,175,0.5) !important;
+		border-color: rgba(104,145,175,1) !important;
+	}
+
+	div#clea-branding {
+		padding: 0;	
+	}
+
+	nav#menu-secondary {
+		position: initial;
+		width: initial;
+		max-width: 60% ;
+		margin-left: auto;
+	}
+
+	
+	/* Temoignages1200-400-300x100.jpg */
+	.display-header-text #header,
+	header#header.site-header {
+		background: url(../images/Temoignages1200-400-300x100.jpg) no-repeat center;
+		min-height: 100px;
+		background-size: 100%;
+		margin-top: -5px;
+
+	}
 
 	div#clea-header {
-		/* max-width: 1075px;
-		margin-right: auto;
-		margin-left: auto; */
-		top: 270px;
+		top: 30px;
 	}
 
-	.ltr.display-header-text #menu-secondary, .ltr.display-header-text #menu-secondary ul, .ltr.wp-custom-logo #menu-secondary, .ltr.wp-custom-logo #menu-secondary ul {
-		float: none !important;
-	}
-
-	.custom-background #header, .custom-background #main, .custom-background #sidebar-subsidiary {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-	}
-		
 	.ib-fond {
-		display: flex;
-		max-width: 1075px;
-		margin-left: auto;
-		margin-right: auto;
+		max-width: 90%;
 	}
 	
 }
+
+@media only screen and (min-width: 371px) and (max-width: 799px) {
+
+	#menu-secondary li a, #menu-secondary .menu-toggle button {
+		color: rgba(255,255,255,1) !important;
+		background: rgba(104,145,175,0.5) !important;
+		border-color: rgba(104,145,175,1) !important;
+	}
+
+	nav#menu-secondary {
+		position: initial;
+		width: initial;
+		margin-left: auto;
+	}	
+	
+	/*Temoignages1200-400-800x267.jpg */
+	.display-header-text #header,
+	header#header.site-header {
+		background: url(../images/Temoignages1200-400-800x267.jpg) no-repeat center;
+		min-height: 267px;
+		background-size: 100%;
+		margin-top: -15px;
+
+	}
+
+	div#clea-header {
+		top: 150px;
+	}
+
+	div#clea-branding {
+		padding: 0.5%;
+		display: flex;		
+	}
+	
+	.ib-fond {
+		max-width: 95%;
+	}
+
+
+	
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1024px){
+
+	#menu-secondary li a, #menu-secondary .menu-toggle button {
+		color: rgba(255,255,255,1) !important;
+		background: rgba(104,145,175,0.5) !important;
+		border-color: rgba(104,145,175,1) !important;
+	}
+
+	nav#menu-secondary {
+		position: initial;
+		width: initial;
+		margin-left: auto;
+	}	
+	
+	.display-header-text #header,
+	header#header.site-header {
+		background: url(../images/Temoignages1200-400-1024x341.jpg) no-repeat center;
+		min-height: 341px;
+		background-size: 100%;
+		margin-top: -45px;
+
+	}
+
+	div#clea-header {
+		top: 170px;
+	}
+
+
+	div#clea-branding {
+		padding: 0.5%;
+		display: flex;		
+	}
+	
+	.ib-fond {
+		max-width: 95%;
+	}
+		
+}
+
+@media only screen and (min-width: 1025px) {
+
+	.display-header-text #header,
+	header#header.site-header {
+		background: url(../images/Temoignages1200-400.jpg) no-repeat center;
+		min-height: 400px;
+		background-size: 100%;
+		margin-top: -35px;
+
+	}
+
+	div#clea-header {
+		top: 270px;
+	}
+
+	nav#menu-secondary {
+		display: flex;	
+		margin-top: auto;
+		margin-bottom: auto;
+		padding-top: 0 !important;
+	}
+	
+	div#clea-header {
+		background-color: rgba(104,145,175,0.5);
+	}
+
+	div#clea-branding {
+		padding: 0.5%;
+		display: flex;		
+	}
+
+	.ib-fond {
+		max-width: 1075px;
+	}
+	
+}
+	
 
 
 
@@ -202,9 +281,6 @@ header#header .wrap {
 	background: #e3c092;
 }
 
-div#clea-header {
-	background-color: rgba(104,145,175,0.5);
-}
 
 #menu-secondary li a {
 	color: #FFFFFF !important;

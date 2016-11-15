@@ -19,15 +19,24 @@
 // Do theme setup on the 'after_setup_theme' hook.
 add_action( 'after_setup_theme', 'clea_ib_theme_setup', 11 ); 
 
-// ne fonctionne pas...
-add_action( 'after_setup_theme', 'clea_ib_theme_setup', 100 ); // higher than hybrid
+# Register custom image sizes.
+// add_action( 'init', 'clea_ib_register_image_sizes', 5 );
+// add_filter( 'image_size_names_choose', 'clea_ib_image_size_names_choose' );
 
 function clea_ib_theme_setup() {
 
 	/* Register and load styles and scripts. */
 	add_action( 'wp_enqueue_scripts', 'clea_ib_enqueue_styles_scripts', 4 ); 
 	/* Set content width. */
-	hybrid_set_content_width( 700 );
+	hybrid_set_content_width( 1200 );
+
+	// Sets the 'post-thumbnail' size.
+	set_post_thumbnail_size( 175, 131, true );
+
+	// set other image sizes
+	add_image_size( 'clea-ib-inter', 800, 800, false ) ;
+	add_image_size( 'clea-ib-full', 1200, 1200, false ) ;	
+	add_filter( 'image_size_names_choose', 'clea_ib_image_size_names_choose' );
 	
 }
 
@@ -40,6 +49,16 @@ function clea_ib_custom_logo() {
     );
     add_theme_support( 'custom-logo', $args );	
 	
+}
+
+function clea_ib_image_size_names_choose( $sizes ) {
+
+	$addsizes = array(
+	"clea-ib-inter" => __( "taille intermédiaire", 'clea-2-IB'),
+	"clea-ib-full"	=> __( "Pleine page", 'clea-2-IB')
+	);
+	$newsizes = array_merge($sizes, $addsizes);
+	return $newsizes;
 }
 
  
