@@ -4,6 +4,25 @@
 *
 */
 
+/********************************************************************************************************
+ * 4 - Images 
+ *
+ ********************************************************************************************************/
+
+img {
+	border: none !important;
+	padding: 0 !important;
+}
+
+/* gravatar for testimonials */
+.testimonial-image img.avatar {
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	width: 100px;
+	height: 100px;
+}
+
 
 /********************************************************************************************************
  * 3 - Polices corps et titres
@@ -48,7 +67,60 @@ h1, h2 {
 	border-bottom: 1px solid rgba(104,145,175,1) !important;
 }
 
+/* pour le contenu de strong testimonials */
+.testimonial-content h3 {
+	font-size: 1.2rem !important;
+}
 
+.testimonial-content p {
+	font-size: 1rem !important;
+	line-height: 1.5 !important;
+	text-align: left;
+}
+
+.testimonial .readmore {
+	font-size: 90%;
+	text-align: center;
+	font-style: italic;
+}
+
+span.clea-fonctions {
+	font-weight: 400;
+}
+
+span.entry-terms.clea-temoin {
+	font-size: smaller;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.clea-first-name, .clea-last-name, .clea-fonctions {
+	margin-left: 1%;
+	font-size: 80%;
+}
+
+.clea-first-name {
+	display: inline-block;
+}
+
+.clea-last-name {
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+.clea-fonctions {
+	display: inline;
+	font-style: italic;
+}
+
+.clea-fonctions::before {
+	content: " - ";
+}
+
+.testimonial-client {
+	margin-bottom: 2%;
+	line-height: 1;
+}
 
 /********************************************************************************************************
  * 2 - header
@@ -91,6 +163,7 @@ div#clea-header {
 	padding-right: 0 !important;
 }
 	
+aside#sidebar-subsidiary,
 .ib-fond {
 	display: flex;
 	margin-left: auto;
@@ -136,6 +209,7 @@ div#clea-header {
 		top: 30px;
 	}
 
+	aside#sidebar-subsidiary,
 	.ib-fond {
 		max-width: 90%;
 	}
@@ -175,6 +249,7 @@ div#clea-header {
 		display: flex;		
 	}
 	
+	aside#sidebar-subsidiary,
 	.ib-fond {
 		max-width: 95%;
 	}
@@ -216,6 +291,7 @@ div#clea-header {
 		display: flex;		
 	}
 	
+	aside#sidebar-subsidiary,
 	.ib-fond {
 		max-width: 95%;
 	}
@@ -253,10 +329,11 @@ div#clea-header {
 		display: flex;		
 	}
 
+	aside#sidebar-subsidiary,
 	.ib-fond {
 		max-width: 1075px;
 	}
-	
+
 }
 	
 
@@ -301,6 +378,10 @@ header#header .wrap {
 		margin-right: auto;
 	}
 	
+}
+
+#sidebar-subsidiary li {
+	display: block;
 }
 
 
@@ -349,6 +430,18 @@ input.wpcf7-form-control.wpcf7-submit.font-primary.font-secondary {
 	border: 2px solid rgba(104,145,175,1) ;
 }
 
+
 .font-headlines, h1, h2, h3, h4, h5, h6 {
 	color: #25597F !important;
+}
+
+#sidebar-subsidiary a,
+main#content a {
+	color: #F5B053 !important;
+}
+
+.strong-view.modern .testimonial-content:before, 
+.strong-view.modern .testimonial-content:after {
+	color: #25597F !important;
+	
 }

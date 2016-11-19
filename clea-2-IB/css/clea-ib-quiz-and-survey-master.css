@@ -14,31 +14,38 @@ span.mlw_qmn_question_number {
 }
 
 
+.qmn_quiz_container input,
 .qmn_quiz_container textarea{
-	border: 1px solid #F5B053 ;
+	border: 2px solid rgba(104,145,175,1)  ;
+	border-radius: 10px;
 	margin-top: 1%;
 	margin-bottom: 1%;
 }
 
+
 div.mlw_qmn_quiz input[type=submit] {
-	color: #25597F !important ;
-	background: #F5B053 !important ;
-	text-shadow: none !important;
-	font-weight: normal !important;
+	font-size: 120%;
+	border-radius: 10px;
+	color: #F49631 !important;
+	font-weight: 800;
+	background-color: white !important;
+	border: 2px solid rgba(104,145,175,1);
 }
 
+
+
+
 div.mlw_qmn_quiz input[type=submit]:hover {
-	color: #F49631;
-	background: #6891AF;
-	text-shadow: none;
-	font-weight: normal;
+	background-color: rgba(104,145,175,1) ;
+	color: #ffffff; ;
 }
+
 
 .qmn_question_answer.qmn_question_answer_incorrect, 
 .qmn_question_answer.qmn_question_answer_correct {
 	margin-bottom: 2%;
 	margin-top: 2%;
-	border-left: 5px #F5B053 solid;
+	border-left: 5px solid rgba(104,145,175,1) ;
 	padding-left: 15px;
 }
 

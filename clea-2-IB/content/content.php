@@ -25,7 +25,7 @@
 				} ?>
 				<?php the_content(); ?>
 				<span class="entry-terms clea-temoin">
-					<?php echo get_post_meta( get_the_ID(), 'first_name', true )?> <?php echo get_post_meta( get_the_ID(), 'last_name', true )?> <span class="clea-fonctions"><?php echo get_post_meta( get_the_ID(), 'fonctions_ou_statut', true )?> </span> </span>				
+					<?php echo get_post_meta( get_the_ID(), 'first_name', true )?> <?php echo get_post_meta( get_the_ID(), 'last_name', true )?>, <span class="clea-fonctions"><?php echo get_post_meta( get_the_ID(), 'fonctions_ou_statut', true )?>. </span> </span>				
 				<?php wp_link_pages(); ?>
 			</div><!-- .entry-content -->
 
