@@ -4,14 +4,51 @@
 *
 */
 
+
 /********************************************************************************************************
- * TESTS
+ * 3 - Polices corps et titres
  *
  ********************************************************************************************************/
-
-header#test3.site-header{
-	background: url(../images/test-768-400.jpg) center ;	
+p {
+	font-size: 95% !important;
+	line-height: 1.4;
 }
+
+h1 {
+	font-size: 2rem !important;
+}
+
+h2 {
+	font-size: 1.5rem !important;
+	font-style: italic !important;
+}
+
+h3 {
+	font-size: 1.2rem !important;
+	font-variant: small-caps;
+}
+
+h4 {
+	font-size: 1.1rem !important;
+}
+
+h5 {
+	font-size: 1rem !important;
+}
+
+h6 {
+	font-size: 0.95rem !important;
+	font-style: italic !important;
+}
+
+
+h1, h2 {
+	margin-bottom: 1rem !important;
+	padding-bottom: 1rem !important;
+	border-bottom: 1px solid rgba(104,145,175,1) !important;
+}
+
+
 
 /********************************************************************************************************
  * 2 - header
@@ -259,7 +296,7 @@ header#header .wrap {
 	}
 
 	main#content {
-		max-width: 1000px;
+		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -270,10 +307,14 @@ header#header .wrap {
 /********************************************************************************************************
  * 0 - colors
  *
- * couleur primaire : jaune marron #dcc02a
- * couleur secondaire : violet #702192
- * troisème couleur : jaune vert #d4da2a
- * couleur foncée de police : violet foncé #220a60
+ * couleur primaire : Nepal #6891AF
+ * couleur arrière plan : violet #702192
+ 
+ * orange Sun #F49631 (244, 150, 49)
+ * orange clair Clementine #F5B053 (245,176,83)
+ * marron pale Pancho #E3C092 (227, 192, 146)
+ * bleu clair Nepal #6891AF (104,145,175)
+ * bleu foncé Bahamasblue #25597F(37,89,127)
 * 
  ********************************************************************************************************/
 
@@ -287,7 +328,27 @@ header#header .wrap {
 }
 
 blockquote {
-	outline-color: rgba(227, 192, 146,0.5) !important;
-	background-color: rgba(227, 192, 146,0.5) !important;
-	color: #656565 !important;
+	outline-color: rgba(104,145,175,1) !important;
+	background-color: rgba(104,145,175,1) !important;
+	/* color: #656565 !important; */
+}
+
+/*** formulaire contact form 7 ***/
+textarea.wpcf7-form-control,
+input.wpcf7-form-control.wpcf7-text {
+	border: 2px solid rgba(104,145,175,1) ;
+	border-radius: 10px;
+}
+
+input.wpcf7-form-control.wpcf7-submit.font-primary.font-secondary {
+	font-size: 120%;
+	border-radius: 10px;
+	color: #F49631;
+	font-weight: 800;
+	background-color: transparent;
+	border: 2px solid rgba(104,145,175,1) ;
+}
+
+.font-headlines, h1, h2, h3, h4, h5, h6 {
+	color: #25597F !important;
 }
