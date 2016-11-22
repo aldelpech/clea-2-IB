@@ -25,9 +25,12 @@
  * 		5 - Comments Template
  * 		6 - Menus
  * 		7 - Plugins
+*/
 
 
-
+.font-primary, body, input, textarea, .label-checkbox, .label-radio, .required, #site-description, #reply-title small {
+	font-family: 'Open Sans', sans-serif !important;
+}
 
 
 
@@ -81,67 +84,6 @@ aside#sidebar-inside-header {
 	align-items: center;
 }
 
-/* mega menu social (header and footer) */
-
-#mega-menu-wrap-social #mega-menu-social > li.mega-menu-item > a.mega-menu-link {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    font-size: 20px;
-}
-
-
-/* ====== search form in header  ====== */
-
-input.search-text {
-    width: 75%;
-    display: inline-block;
-}
-
-.widget_search input[type=submit] {
-    display: inline-block;
-    width: 20%;
-	background-size: 40% 100%;
-	padding: 10px 1.5rem;
-    margin-left: -5px;
-}
-
-.site-header .widget_search>.search-form {
-    padding: 0; 
-    margin: 0;
-}
-
-.site-header ul#menu-reseaux-sociaux {
-    margin: 0;
-}
-
-
-
-
-
-
-/* ====== Header image  ====== */
-
-.header-image {
-	/* width: 100%; */
-	max-width: 1800 px;
-	max-height: 480px;
-	border-radius: 0;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-}
-
-section.clea-header-image {
-    width: 100%;
-}
-.display-header-text #header {
-    border-bottom: 0; 
-}	
-
-
-
 
 /********************************************************************************************************
  * 2 - Main and Content
@@ -168,121 +110,6 @@ section.clea-header-image {
 	}
 	
 }
-
-/* ====== front page "tous les articles" ====== */
-h3.widget-title.font-headlines.articles>.wrap::before {
-    content: "\f425";
-}
-
-/* ====== liste d'articles ====== */
-	.bloc-article {				
-		display: inline-block;
-		margin: 0 0 1.5em;
-		width: 100%;
-		box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		padding: 4px;
-		border-radius: 15px;
-		-moz-border-radius: 15px;
-		-webkit-border-radius: 15px;
-	}
-	
-	/* style items */
-
-	.bloc-article pre {
-		white-space: pre-wrap;
-		padding: 5px;
-	}
-
-	.bloc-article img { 
-		  height: 150px; 
-		  width: auto;
-		  float: left; 
-		  /* border-radius: 50%; */
-		  margin: 5px 15px 5px 0 ;
-		  /* 
-		  -webkit-shape-outside: circle(40%);
-		  -webkit-shape-margin: 10px;
-		  shape-outside: circle(40%);
-			shape-margin: 10px;
-		  clip-path: circle(35%);
-		  transition: shape-outside 1s;
-		  */
-	}
-
-	.bloc-article img:hover{
-		/*
-		-webkit-shape-outside: circle(45%);
-		-webkit-shape-margin: 1px;
-		shape-outside: circle(45%);
-		shape-margin: 1px;
-		*/
-		height: 170px;
-		width: auto;
-	}
-
-	.bloc-article a img {
-		padding: 0; 
-	}
-
-	.bloc-article .entry-summary {
-		font-size: 95%;
-		line-height: 1.4;
-		padding: 0 5px 5px 5px;
-	}
-
-	.bloc-article .entry-meta{
-		margin-bottom: 5px;
-		
-	}
-
-	.bloc-article .entry-title a {
-		text-decoration: none;
-		font-size: 85%;
-		padding: 0;
-	}
-
-	.bloc-article  h3.entry-title  {
-		margin-bottom: 6px;
-		margin-top: 6px;
-		line-height: 1.4;
-		font-weight: 600;
-	}
-
-	.bloc-article .categories {
-		border-radius: 15px 5px 5px 15px;
-		-moz-border-radius: 15px 5px 5px 15px;
-		-webkit-border-radius: 15px 5px 5px 15px;
-		padding: 8px;
-		float: right;
-		margin-right: -15px;
-		font-size: 90%;
-	}
-
-	.bloc-article .categories  a {
-		/* font-size: 110%; */
-		font-weight: 600 ;
-		text-decoration: none;
-		font-variant: small-caps;
-	}
-
-	.bloc-article .categories a::after {
-		content: "\f061";
-		font-family: FontAwesome;
-		margin-left: 6px;
-		margin-right: 0;;
-	}
-
-
-	.bloc-article .entry-byline {
-		display:inline-block;
-		line-height: 45px;
-		height: 45px;
-		margin-bottom: 0 !important;
-		/* margin-left: -15px; */
-	}
-
 
 /* ====== Do not display author ====== */	
 	.ltr .entry-author {
@@ -322,63 +149,6 @@ figcaption.wp-caption-text.font-secondary {
  ********************************************************************************************************/
 
 /* ======  ====== */
-/* ====== abonnez-vous à la newsletter ====== */
-h3.widget-title.font-headlines.newsletter>.wrap::before {
-    content: "\f465";
-}
-
-/* style the "abonnez-vous" widget in primary sidebar */
-
-#mc_embed_signup {
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-    border-radius: 10px;
-	padding-bottom: 10px;
-}
-
-#mc_embed_signup h2 {
-    text-align: center;
-}
-
-.mc-field-group label {
-    display: none;
-}
-
-
-.mc-field-group input {
-    width: 90%;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-    box-sizing: border-box;
-    display: block;
-    margin-left: auto;
-	margin-right: auto;
-    margin-bottom: 8px;
-    padding: 5px;
-}
-
-input#mc-embedded-subscribe {
-    background-color: #220a60;
-    color: #dcc02a;
-}
-
-p.home-subscribe {
-	font-size: 80%;
-    line-height: 1.1;
-    font-style: italic;
-    margin-top: 15px;
-    width: 90%;
-    text-align: center;
-    text-align: -webkit-center;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-p.mc-subscribe {
-    text-align: -webkit-center;
-    text-align: center;
-}
 
 /* ====== Subsidiary sidebar ====== */
 #sidebar-subsidiary {
@@ -417,120 +187,6 @@ p.mc-subscribe {
  *
  * .
  ********************************************************************************************************/
-
-/* ====== Mega menu full width settings ====== */
-
-
-@media only screen and (min-width: 800px) {
-    #mega-menu-wrap-secondary #mega-menu-secondary {
-		max-width: 1075px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
-/* ====== Affichage events sur page d'accueil ====== */
-
-#sidebar-before-front-page ol.tribe-list-widget {
-	display: -moz-box;        
-	display: -ms-flexbox;   
-	display: -webkit-flex;   
-	display: flex;   
-    flex-direction: row;
-    margin: 0;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-@media only screen and (min-width: 800px) {
-	
-	#sidebar-before-front-page .tribe-events-list-widget ol li  {
-		flex-basis: 23%;
-		margin-bottom: 0;
-	}
-
-}
-
-@media only screen and (max-width: 800px) {
-	
-	#sidebar-before-front-page .tribe-events-list-widget ol li  {
-		flex-basis: 48%;
-		margin-bottom: 0;
-	}
-
-}
-
-#sidebar-before-front-page .tribe-events-list-widget .tribe-events-event-image {
-	margin-bottom: 0; 
-    text-align: center; 
-}
-
-#sidebar-before-front-page .tribe-events-list-widget .tribe-events-event-image img {
-    max-width: 70%;
-}
-
-#sidebar-before-front-page .tribe-events-list-widget h6.tribe-event-title {
-    font-size: 1.2em;
-	border-bottom: none;
-    padding-bottom: 0;
-	margin-bottom: 0;
-}
-
-#sidebar-before-front-page .tribe-events-list-widget section.resume-event p {
-	margin: 0 0 5px 0;
-	font-size: 90%;
-    line-height: 1.1;
-}
-
-#sidebar-before-front-page .tribe-events-list-widget .tribe-event-duration {
-    font-size: 80%;
-    font-weight: 600;
-}
-
-#sidebar-before-front-page .tribe-events-list-widget .tribe-event-organisateur {
-    font-size: 80%;
-}
-
-#sidebar-before-front-page .tribe-events-list-widget p.tribe-events-widget-link {
-    padding: 8px 20px 8px 20px;
-    text-align: center;
-    border-radius: 15px;
-    float: right;
-	margin-bottom: 0;
-	margin-right: 3%;
-}
-
-/* ====== The events Calendar - month view style ====== */
-
-.tribe-events-month #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-next a, .tribe-events-month #tribe-events-header .tribe-events-sub-nav li {
-    display: block;
-	font-size: 110%;
-}
-
-#tribe-events-bar {
-    display: none;
-}
-
-/* ====== Jetpack share buttons ====== */
-
-div.sharedaddy .sd-content ul li {
-	position: initial !important;
-    padding-left: 0 !important;
-    display: inline-block !important;
-}
-
-div.sharedaddy .sd-content {
-    display: inline-block;
-    margin-left: 10px;
-	width: 70%;
-}
-
-
-a.share-icon::after {
-    content: "" !important;
-    display: none !important;
-}
-		
 
 
 

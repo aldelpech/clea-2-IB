@@ -16,11 +16,6 @@ img {
 	padding: 0 !important;
 }
 
-img.alignnone.wp-post-image {
-	width: 100%;
-	margin-bottom: 4%;
-}
-
 /* gravatar for testimonials */
 .testimonial-image img.avatar {
 	border-radius: 15px;
@@ -35,19 +30,10 @@ img.alignnone.wp-post-image {
  * 3 - Polices corps et titres
  *
  ********************************************************************************************************/
-.font-primary, body, input, textarea, .label-checkbox, .label-radio, .required, #site-description, #reply-title small {
-	font-family: 'Open Sans', sans-serif !important;
-}
- 
-ol, ul, li, p  {
-	font-size: 85% !important;
+p {
+	font-size: 95% !important;
 	line-height: 1.4;
 }
-
-body, .media-shortcode-extend .media-info, .wp-playlist-dark .wp-playlist-item {
-	color: #423432 !important;
-}
-
 
 h1 {
 	font-size: 2rem !important;

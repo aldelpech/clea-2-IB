@@ -19,9 +19,16 @@
 // Do theme setup on the 'after_setup_theme' hook.
 add_action( 'after_setup_theme', 'clea_ib_theme_setup', 11 ); 
 
-# Register custom image sizes.
-// add_action( 'init', 'clea_ib_register_image_sizes', 5 );
-// add_filter( 'image_size_names_choose', 'clea_ib_image_size_names_choose' );
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'clea-ib-inter', 800, 800, false ) ;
+	add_image_size( 'clea-ib-full', 1200, 1200, false ) ;
+}
+
+add_filter( 'image_size_names_choose', 'clea_ib_image_size_names_choose' );
+
+// add meta boxes for sections of front page
+add_action( 'add_meta_boxes', 'clea_ib_frontpage_meta_box' );
+add_action( 'save_post', 'clea_ib_save_meta_box_data' );
 
 function clea_ib_theme_setup() {
 
@@ -32,11 +39,6 @@ function clea_ib_theme_setup() {
 
 	// Sets the 'post-thumbnail' size.
 	set_post_thumbnail_size( 175, 131, true );
-
-	// set other image sizes
-	add_image_size( 'clea-ib-inter', 800, 800, false ) ;
-	add_image_size( 'clea-ib-full', 1200, 1200, false ) ;	
-	add_filter( 'image_size_names_choose', 'clea_ib_image_size_names_choose' );
 	
 }
 
@@ -121,7 +123,7 @@ function clea_ib_frontpage_meta_box( $post ){
 
 	}
 }
-add_action( 'add_meta_boxes', 'clea_ib_frontpage_meta_box' );
+
 
 function clea_ib_custom_meta_box( $post ){
 
@@ -167,6 +169,8 @@ function clea_ib_custom_meta_box( $post ){
 	</div>
 	<?php
 }
+
+
 
 function clea_ib_save_meta_box_data( $post_id ){
 	// verify taxonomies meta box nonce
@@ -214,6 +218,37 @@ function clea_ib_save_meta_box_data( $post_id ){
 	}	
 	
 }
-add_action( 'save_post', 'clea_ib_save_meta_box_data' );
+
+// add breadcrumb trail to the strong testimonials single posts
+// add_filter( 'breadcrumb_trail_items', 'clea_ib_breadcrumb_trail_items' );
+
+function clea_ib_breadcrumb_trail_items( $items ) {
+	// http://themehybrid.com/board/topics/filter-breadcrumb_trail_args-syntax-for-2-arguments
+	// http://themehybrid.com/board/topics/display-blog-in-breadcrumbs
+	
+	if( is_post_type( 'wpm-testimonial' ) )  {			
+
+		$blog_id = absint( get_option( 'page_for_posts' ) );
+
+		if ( 0 < $blog_id ) {
+
+			$new_items = array();
+
+			// Shifts the "home" item off of original array.
+			$new_items[] = array_shift( $items );
+
+			$new_items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $blog_id ) ), esc_html( get_the_title( $blog_id ) ) );
+
+			$items = array_merge( $new_items, $items );
+		}
+	}
+		
+
+	return $items;
+}
+
+
+
+
 
 ?>
