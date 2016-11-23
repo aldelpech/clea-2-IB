@@ -6,29 +6,6 @@
 
 /*** Page d'accueil définie dans clea-ib-front-page.css ***/
 
-/********************************************************************************************************
- * 4 - Images 
- *
- ********************************************************************************************************/
-
-img {
-	border: none !important;
-	padding: 0 !important;
-}
-
-img.alignnone.wp-post-image {
-	width: 100%;
-	margin-bottom: 4%;
-}
-
-/* gravatar for testimonials */
-.testimonial-image img.avatar {
-	border-radius: 15px;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	width: 100px;
-	height: 100px;
-}
 
 
 /********************************************************************************************************
@@ -38,10 +15,13 @@ img.alignnone.wp-post-image {
 .font-primary, body, input, textarea, .label-checkbox, .label-radio, .required, #site-description, #reply-title small {
 	font-family: 'Open Sans', sans-serif !important;
 }
- 
-ol, ul, li, p  {
-	font-size: 85% !important;
-	line-height: 1.4;
+
+html {
+	font-size: 14px !important;
+}
+
+main#content {
+	font-size: 95% !important;
 }
 
 body, .media-shortcode-extend .media-info, .wp-playlist-dark .wp-playlist-item {
@@ -89,13 +69,15 @@ h1, h2 {
 }
 
 .testimonial-content p {
+	/*
 	font-size: 1rem !important;
 	line-height: 1.5 !important;
-	text-align: left;
+	*/
+	text-align: left !important;
 }
 
 .testimonial .readmore {
-	font-size: 90%;
+	/* font-size: 90%; */
 	text-align: center;
 	font-style: italic;
 }
@@ -137,6 +119,40 @@ span.entry-terms.clea-temoin {
 	margin-bottom: 2%;
 	line-height: 1;
 }
+
+/********************************************************************************************************
+ * 4 - Images et témoignages
+ *
+ ********************************************************************************************************/
+
+img {
+	border: none !important;
+	padding: 0 !important;
+}
+
+img.alignnone.wp-post-image {
+	width: 100%;
+	margin-bottom: 4%;
+}
+
+/* gravatar for testimonials */
+.testimonial-image img.avatar {
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	width: 100px;
+	height: 100px;
+}
+
+.strong-view.default {
+	overflow: auto;
+	max-height: 300px;
+}
+
+.strong-cycle-controls.buttons1.right, .strong-cycle-controls.buttons1.left {
+	top: 150px !important ;
+}
+
 
 /********************************************************************************************************
  * 2 - header
@@ -479,4 +495,26 @@ a.su-button.su-button-style-flat.clea-ib-button span i.fa.fa-arrow-right:hover,
 a.su-button.su-button-style-flat.clea-ib-button span:hover {
 	font-weight: 800;
 	color: #F49631 !important;
+}
+
+.strong-cycle-controls.buttons1 > span {
+	color: #25597F !important;
+}
+
+.strong-cycle-controls.buttons1 > span:hover {
+	color: #F49631 !important;
+}
+
+.contact-4 a {
+	color: #25597F ;
+	
+}
+
+.strong-view.default {
+	border: 1px solid #ccc;
+}
+
+.strong-view.default .testimonial,
+.strong-view.default .testimonial-inner {
+	border: 0 ;
 }
