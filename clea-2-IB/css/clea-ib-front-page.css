@@ -8,7 +8,7 @@
 /* .page-template-IB-home-template section.section-1 */
 
 
-/***** ESSAI SUR FRONT PAGE seulement ****/
+/***** MENUS secondaire ESSAI SUR FRONT PAGE seulement ****/
 @media only screen and (min-width: 1025px) {
 
 	#menu-secondary ul li a:hover, #menu-secondary ul li a:focus {
@@ -26,8 +26,21 @@
 	.ltr #menu-secondary li li {
 		margin-left: 24px !important;
 	}
+
+	#menu-secondary ul li:hover > a, #menu-secondary ul li:focus > a {
+		background: #25597F;
+	}
+	
+	#menu-secondary li li a {
+		background: #25597F !important;
+	}
+	
+	.menu li>ul::before {
+		border-bottom-color: transparent !important;
+	}
 	
 }
+
 
 
 /********************************************************************************************************
@@ -42,7 +55,10 @@
 	
 }
 
-.page-template-IB-home-template p {
+body.home .content-1 p,
+body.home .content-2 p,
+body.home .content-3 p,
+body.home .content-5 p {
 	text-align: center;
 }
 
@@ -219,15 +235,5 @@ body.home blockquote {
 body.home .content-4 {
 	 color: #25597F ;
  }
- 
-@media only screen and (min-width: 1025px) {
 
-	#menu-secondary ul li:hover > a, #menu-secondary ul li:focus > a {
-		background: #25597F;
-	}
-	
-	#menu-secondary li li a {
-		background: #25597F !important;
-	}
-		
-}
+ 
