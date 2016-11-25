@@ -84,12 +84,6 @@ function clea_ib_enqueue_styles_scripts() {
 		wp_enqueue_style( 'clea-ib-quiz-master', get_stylesheet_directory_uri() . '/css/clea-ib-quiz-and-survey-master.css', array(), false, 'all' );
 		
 	} 
-
-	// feuille de style pour Strong Testimonials - https://fr.wordpress.org/plugins/strong-testimonials/
-	if( is_plugin_active( 'strong-testimonials/strong-testimonials.php' ) ) {
-		
-		wp_enqueue_style( 'clea-ib-strong-testimonials', get_stylesheet_directory_uri() . '/css/clea-ib-strong-testimonials.css', array(), false, 'all' );
-	}	
 	
 	// font awesome CDN
 	wp_enqueue_script( 'clea-ib-font-awesome', 'https://use.fontawesome.com/1dcb7878fd.js', false );

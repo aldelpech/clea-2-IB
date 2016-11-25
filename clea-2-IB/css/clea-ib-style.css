@@ -7,6 +7,40 @@
 /*** Page d'accueil définie dans clea-ib-front-page.css ***/
 
 
+/***** MENUS secondaire ****/
+@media only screen and (min-width: 1025px) {
+
+	#menu-secondary ul li a:hover, #menu-secondary ul li a:focus {
+		position: relative;
+		display: block;
+		width: 180px;
+		padding: 18px 25px;
+		font-size: .75rem;
+		font-weight: 400;
+		line-height: 1.5;
+		border-top: 1px solid;
+		text-align: left;
+	}
+
+	.ltr #menu-secondary li li {
+		margin-left: 24px !important;
+	}
+
+	#menu-secondary ul li:hover > a, #menu-secondary ul li:focus > a {
+		background: #25597F;
+	}
+	
+	#menu-secondary li li a {
+		background: #25597F !important;
+	}
+	
+	.menu li>ul::before {
+		border-bottom-color: transparent !important;
+	}
+	
+}
+
+
 
 /********************************************************************************************************
  * 3 - Polices corps et titres
@@ -468,7 +502,8 @@ input.wpcf7-form-control.wpcf7-submit.font-primary.font-secondary {
 }
 
 #sidebar-subsidiary a,
-main#content a {
+main#content a,
+#footer a {
 	color: #F5B053 !important;
 }
 
@@ -519,3 +554,13 @@ a.su-button.su-button-style-flat.clea-ib-button span:hover {
 .strong-view.default .testimonial-inner {
 	border: 0 ;
 }
+
+#footer {
+	background: #25597F !important;
+}
+
+#footer p {
+	color: white;
+}
+
+

@@ -30,11 +30,11 @@
 			
 			// to be able to do the shortcodes and not simply display them
 			// http://stackoverflow.com/questions/3602941/why-isnt-apply-filterthe-content-outputting-anythin
-			$section_1 = apply_filters('the_content', $meta[_section_1][0]); 	
-			$section_2 = apply_filters('the_content', $meta[_section_2][0]); 	
-			$section_3 = apply_filters('the_content', $meta[_section_3][0]); 	
-			$section_4 = apply_filters('the_content', $meta[_section_4][0]); 		
-			$section_5 = apply_filters('the_content', $meta[_section_5][0]); 	
+			$section_1 = apply_filters( 'the_content', $meta[ '_section_1' ][0] ); 	
+			$section_2 = apply_filters( 'the_content', $meta[ '_section_2' ][0] ); 	
+			$section_3 = apply_filters( 'the_content', $meta[ '_section_3' ][0] ); 	
+			$section_4 = apply_filters( 'the_content', $meta[ '_section_4' ][0] ); 		
+			$section_5 = apply_filters( 'the_content', $meta[ '_section_5' ][0] ); 	
 			?>
 			
 			<section class="section-1">
