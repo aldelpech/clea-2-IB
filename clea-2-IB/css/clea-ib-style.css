@@ -187,7 +187,27 @@ img.alignnone.wp-post-image {
 	top: 150px !important ;
 }
 
+/********************************************************************************************************
+ * 3 - sidebar subsidiary
+ *
+ ********************************************************************************************************/
 
+@media only screen and (max-width: 400px) {
+	
+	aside#sidebar-subsidiary section#nav_menu-2 {
+		display: none ;
+	}
+}
+ 
+
+@media only screen and (max-width: 699px) {
+
+	aside#sidebar-subsidiary section#recent-posts-3 {
+		display: none ;
+	}	
+	
+}
+ 
 /********************************************************************************************************
  * 2 - header
  *
