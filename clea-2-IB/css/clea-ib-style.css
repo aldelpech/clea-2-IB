@@ -13,7 +13,7 @@
 	#menu-secondary ul li a:hover, #menu-secondary ul li a:focus {
 		position: relative;
 		display: block;
-		width: 180px;
+		width: 180px; 
 		padding: 18px 25px;
 		font-size: .75rem;
 		font-weight: 400;
@@ -21,6 +21,11 @@
 		border-top: 1px solid;
 		text-align: left;
 	}
+	
+	/* pour que le sous menu ne soit pas trop haut */
+	#menu-secondary ul ul {
+		top: 43px !important ;
+	}	
 
 	.ltr #menu-secondary li li {
 		margin-left: 24px !important;
